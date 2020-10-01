@@ -1,19 +1,16 @@
 # Project 3 Proposal
 ---
 ### Topic
-Disasters around the world.
-Natural and Man Made distatsers that have impacted the world. 
+How the world has grown
 
 ---
 ### Dataset
-Data Tables from Wikipedia.
+Global Cirty Population Estimates
 
 ---
 ## Proposal
 
-I will create a data visualisation using leaflet.js to show all the disasters that have been recorded on wikipedia and any information relating the the distaster
-There will also be different layers and controls.
-
+I will create a data visualisation using leaflet.js to show how the population of humans has grown in every city and how it is projected to grow. 
 
 
 
