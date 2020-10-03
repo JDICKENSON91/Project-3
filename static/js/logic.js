@@ -1,19 +1,19 @@
-var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/master/static/js/global-city-population-estimates.geojson"
+var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/static/js/global-city-population-estimates.geojson"
 
 // Function to determine marker size based on population.
 function markerSize(population) {
-  return population / 10;
+  return population / 100;
 }
 
 // Function to return the color based on population.
 function markerColor(population) {
-  if (population > 10000) {
+  if (population > 700) {
     return 'red'
-  } else if (population > 5000) {
+  } else if (population > 500) {
     return 'orange'
-  } else if (population > 3000) {
+  } else if (population > 300) {
     return 'yellow'
-  } else if (population > 1000) {
+  } else if (population > 100) {
       return 'green'
   } else {
     return 'blue'
@@ -21,33 +21,9 @@ function markerColor(population) {
 }
 
 
-// Function for opacity based on population.
-function markerOpacity(population) {
-  if (population > 10000) {
-    return .99
-  } else if (population > 9000) {
-    return .9
-  } else if (population > 8000) {
-    return .8
-  } else if (population > 7000) {
-    return .7
-  } else if (population > 6000) {
-    return .6
-  } else if (population > 5000) {
-    return .5
-  } else if (population > 4000) {
-    return .4
-  } else if (population > 3000) {
-    return .3
-  } else if (population > 2000) {
-    return .2
-  } else {
-    return .1
-  }
-}
 
 // GET request, and function to handle returned JSON data.
-d3.json(link, function(data) {
+d3.json(dataurl, function(data) {
   
   var population = L.geoJSON(data.features, {
     onEachFeature : addPopup,
@@ -63,10 +39,10 @@ createMap(population);
 function addMarker(feature, location) {
   var options = {
     stroke: false,
-    fillOpacity: markerOpacity(feature.properties.2030),
-    color: markerColor(feature.properties.2030),
-    fillColor: markerColor(feature.properties.2030),
-    radius: markerSize(feature.properties.2030)
+    fillOpacity: 1,
+    color: markerColor(feature.properties.D2030),
+    fillColor: markerColor(feature.properties.D2030),
+    radius: markerSize(feature.properties.D2030)
   }
 
   return L.circleMarker(location, options);
@@ -76,7 +52,7 @@ function addMarker(feature, location) {
 // Define a function we want to run once for each feature in the features array
 function addPopup(feature, layer) {
   // Give each feature a pop up describing the place and time of the earthquake
-  return layer.bindPopup(`<h3> ${feature.properties.Urban Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country or area} </h4> <h4>Country: ${feature.properties.2030} </h4>`);
+  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.D2030} </h4>`);
 }
 
 // function to receive a layer of markers and plot them on a map.
@@ -113,14 +89,14 @@ function createMap(population) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    Population: 2030
+    Population: population
   };
 
   // Creating map object
 var myMap = L.map("map", {
 center: [-31.9505, 115.8605],
 zoom: 3,
-layers: [lightmap, 2030]
+layers: [lightmap, population]
 });
 
 // Adding tile layer
