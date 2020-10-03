@@ -78,7 +78,7 @@ createMap(population);
 // Define a function we want to run once for each feature in the features array
 function addPopup(feature, layer) {
   // Give each feature a pop up describing the place and time of the earthquake
-  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.D2030 / 1000} M</h4>`);
+  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.Population / 1000} M</h4>`);
 }
 
 // function to receive a layer of markers and plot them on a map.
@@ -145,6 +145,13 @@ id: "mapbox/outdoors-v11",
 accessToken: API_KEY
 }).addTo(myMap);
 
+  // Create a layer control
+    // Pass in our baseMaps and overlayMaps
+    // Add the layer control to the map
+    L.control.layers(baseMaps, overlayMaps, {
+      collapsed: true
+    }).addTo(myMap);
+
 
   // creating the legend
   var legend = L.control({position: 'bottomright'});
@@ -169,12 +176,23 @@ accessToken: API_KEY
   
   legend.addTo(myMap);
 
-  // Create a layer control
-  // Pass in our baseMaps and overlayMaps
-  // Add the layer control to the map
-  L.control.layers(baseMaps, overlayMaps, {
-    collapsed: true
-  }).addTo(myMap);
+    // creating the legend
+    var poptotal = L.control({position: 'bottomleft'});
+
+    // add legend to map
+    poptotal.onAdd = function () {
+    
+      var div = L.DomUtil.create('div', 'info legend')
+        
+  
+      div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
+  
+  
+      return div;
+    };
+    
+    poptotal.addTo(myMap);
+  
 
 }
 
