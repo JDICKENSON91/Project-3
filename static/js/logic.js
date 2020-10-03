@@ -2,21 +2,32 @@ var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/st
 
 // Function to determine marker size based on population.
 function markerSize(population) {
-  return population / 100;
+  if (population > 30000) {
+    return 20
+  } else if (population > 20000) {
+    return 15
+  } else if (population > 10000) {
+    return 10
+  } else if (population > 5000) {
+    return 5  
+  } else {
+    return 3
+  }
 }
-
 // Function to return the color based on population.
 function markerColor(population) {
-  if (population > 700) {
+  if (population > 30000) {
     return 'red'
-  } else if (population > 500) {
+  } else if (population > 20000) {
     return 'orange'
-  } else if (population > 300) {
+  } else if (population > 10000) {
     return 'yellow'
-  } else if (population > 100) {
+  } else if (population > 5000) {
       return 'green'
+    } else if (population > 2000) {
+      return 'blue'    
   } else {
-    return 'blue'
+    return 'purple'
   }
 }
 
@@ -52,7 +63,7 @@ function addMarker(feature, location) {
 // Define a function we want to run once for each feature in the features array
 function addPopup(feature, layer) {
   // Give each feature a pop up describing the place and time of the earthquake
-  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.D2030} </h4>`);
+  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.D2030 / 1000} M</h4>`);
 }
 
 // function to receive a layer of markers and plot them on a map.
@@ -119,12 +130,13 @@ accessToken: API_KEY
     var div = L.DomUtil.create('div', 'info legend')
       
 
-    div.innerHTML += "<h4>Population (Thousdands)</h4>";
-    div.innerHTML += '<i style="background: red"></i><span>Greater than 10,000</span><br>';
-    div.innerHTML += '<i style="background: orange"></i><span>5,000</span><br>';
-    div.innerHTML += '<i style="background: yellow"></i><span>3,000</span><br>';
-    div.innerHTML += '<i style="background: green"></i><span>1,000</span><br>';
-    div.innerHTML += '<i style="background: blue"></i><span>Less Than 1,000</span><br>';
+    div.innerHTML += "<h4>Population</h4>";
+    div.innerHTML += '<i style="background: red"></i><span>Greater than 30 Million</span><br>';
+    div.innerHTML += '<i style="background: orange"></i><span>20 Million</span><br>';
+    div.innerHTML += '<i style="background: yellow"></i><span>10 Million</span><br>';
+    div.innerHTML += '<i style="background: green"></i><span>5 Million</span><br>';
+    div.innerHTML += '<i style="background: blue"></i><span>2 Million</span><br>';
+    div.innerHTML += '<i style="background: purple"></i><span>Less Than 2 Million</span><br>';
 
 
     return div;
