@@ -43,11 +43,11 @@ d3.json(dataurl, function(data) {
 
 // Create Map
 createMap(population);
-
 }); 
 
 
-function addMarker(feature, location) {
+
+  function addMarker(feature, location) {
   var options = {
     stroke: false,
     fillOpacity: 1,
@@ -58,7 +58,80 @@ function addMarker(feature, location) {
 
   return L.circleMarker(location, options);
 
-}
+};
+
+// GET request, and function to handle returned JSON data.
+d3.json(dataurl, function(data) {
+  
+  var D1950 = L.geoJSON(data.features, {
+    onEachFeature : addPopup,
+    pointToLayer: addMarker
+  });
+
+// Create Map
+createMap(D1950);
+}); 
+
+
+
+  function addMarker(feature, location) {
+  var options = {
+    stroke: false,
+    fillOpacity: 1,
+    color: markerColor(feature.properties.D1950),
+    fillColor: markerColor(feature.properties.D1950),
+    radius: markerSize(feature.properties.D1950)
+  }
+
+  return L.circleMarker(location, options);
+
+};
+
+d3.json(dataurl, function(data) {
+  
+  var D1960 = L.geoJSON(data.features, {
+    onEachFeature : addPopup,
+    pointToLayer: addMarker
+  });
+
+// Create Map
+createMap(D1960);
+}); 
+
+
+
+  function addMarker(feature, location) {
+  var options = {
+    stroke: false,
+    fillOpacity: 1,
+    color: markerColor(feature.properties.D1960),
+    fillColor: markerColor(feature.properties.D1960),
+    radius: markerSize(feature.properties.D1960)
+  }
+
+  return L.circleMarker(location, options);
+
+};
+
+
+
+
+
+
+
+
+//function addMarker(feature, location) {
+//  var options = {
+//    stroke: false,
+//    fillOpacity: 1,
+//    color: markerColor(feature.properties.D2030),
+//    fillColor: markerColor(feature.properties.D2030),
+//    radius: markerSize(feature.properties.D2030)
+//  }
+//
+//  return L.circleMarker(location, options);
+//
+//}
 
 // Define a function we want to run once for each feature in the features array
 function addPopup(feature, layer) {
@@ -91,11 +164,26 @@ function createMap(population) {
     accessToken: API_KEY
   });
 
+  var satelite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    maxZoom: 18,
+    id: "mapbox/satellite-v9",
+    accessToken: API_KEY
+  });
+
   // Define a baseMaps object to hold our base layers
   var baseMaps = {
-    "Street Map": streetmap,
+    "Satelite": satelite,
     "Dark Map": darkmap,
-    "Light Map" : lightmap
+    "Light Map" : lightmap,
+    "Street Map": streetmap
+  };
+
+  // Define a baseMaps object to hold our base layers
+  var Years = {
+    "1950": population,
+    "1960": population
+   
   };
 
   // Create overlay object to hold our overlay layer
@@ -105,9 +193,9 @@ function createMap(population) {
 
   // Creating map object
 var myMap = L.map("map", {
-center: [-31.9505, 115.8605],
-zoom: 3,
-layers: [lightmap, population]
+center: [0, 0],
+zoom: 2.3,
+layers: [darkmap, Years, population]
 });
 
 // Adding tile layer
