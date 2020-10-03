@@ -58,3 +58,28 @@ body,
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
 }
+
+.button {
+  transition-duration: 0.4s;
+  width:10%; 
+  height: 1.5cm; 
+  font-size: .75cm; 
+  margin: 6px;
+  border-color: black ;
+  font-family: fantasy;
+}
+
+.button:hover {
+  background-color: black; /* Green */
+  color: white;
+  border-color: white;
+}
+
+.containerbutton {
+  margin-right:auto;
+  margin-left:auto;
+  padding-left:15px;
+  padding-right:15px;
+  text-align:center;
+  align-content:center;
+}
