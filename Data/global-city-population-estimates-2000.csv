@@ -1,4 +1,4 @@
-﻿Country_Code,Country_or_area,City_Code,Urban_Agglomeration,Latitude,Longitude,Location,D2000
+﻿Country_Code,Country_or_area,City_Code,Urban_Agglomeration,Latitude,Longitude,Location,Population
 4,Afghanistan,20002,Kabul,34.53,69.17,"34.53, 69.17",2401
 4,Afghanistan,20003,Kandahar,31.61,65.71,"31.61, 65.71",297
 4,Afghanistan,20001,Herat,34.35,62.2,"34.35, 62.2",234

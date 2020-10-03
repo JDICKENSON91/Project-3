@@ -1,4 +1,4 @@
-var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/static/js/global-city-population-estimates.geojson"
+var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/Data/global-city-population-estimates-2000.geojson"
 
 // Function to determine marker size based on population.
 function markerSize(population) {
@@ -51,72 +51,14 @@ createMap(population);
   var options = {
     stroke: false,
     fillOpacity: 1,
-    color: markerColor(feature.properties.D2030),
-    fillColor: markerColor(feature.properties.D2030),
-    radius: markerSize(feature.properties.D2030)
+    color: markerColor(feature.properties.Population),
+    fillColor: markerColor(feature.properties.Population),
+    radius: markerSize(feature.properties.Population)
   }
 
   return L.circleMarker(location, options);
 
 };
-
-// GET request, and function to handle returned JSON data.
-d3.json(dataurl, function(data) {
-  
-  var D1950 = L.geoJSON(data.features, {
-    onEachFeature : addPopup,
-    pointToLayer: addMarker
-  });
-
-// Create Map
-createMap(D1950);
-}); 
-
-
-
-  function addMarker(feature, location) {
-  var options = {
-    stroke: false,
-    fillOpacity: 1,
-    color: markerColor(feature.properties.D1950),
-    fillColor: markerColor(feature.properties.D1950),
-    radius: markerSize(feature.properties.D1950)
-  }
-
-  return L.circleMarker(location, options);
-
-};
-
-d3.json(dataurl, function(data) {
-  
-  var D1960 = L.geoJSON(data.features, {
-    onEachFeature : addPopup,
-    pointToLayer: addMarker
-  });
-
-// Create Map
-createMap(D1960);
-}); 
-
-
-
-  function addMarker(feature, location) {
-  var options = {
-    stroke: false,
-    fillOpacity: 1,
-    color: markerColor(feature.properties.D1960),
-    fillColor: markerColor(feature.properties.D1960),
-    radius: markerSize(feature.properties.D1960)
-  }
-
-  return L.circleMarker(location, options);
-
-};
-
-
-
-
-
 
 
 
@@ -179,12 +121,7 @@ function createMap(population) {
     "Street Map": streetmap
   };
 
-  // Define a baseMaps object to hold our base layers
-  var Years = {
-    "1950": population,
-    "1960": population
-   
-  };
+
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
@@ -195,7 +132,7 @@ function createMap(population) {
 var myMap = L.map("map", {
 center: [0, 0],
 zoom: 2.3,
-layers: [darkmap, Years, population]
+layers: [darkmap, population]
 });
 
 // Adding tile layer
