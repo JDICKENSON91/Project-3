@@ -70,6 +70,8 @@ function runfilters() {
 
 function runreset() {
 
+d3.select("tbody").html("");
+
 //add all table data to table.
 tableData.forEach((report) => {
     //console.log(report);

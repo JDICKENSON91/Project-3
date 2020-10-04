@@ -61,12 +61,12 @@ body,
 
 .button {
   transition-duration: 0.4s;
-  border-radius: 10px;
-  width:9%; 
-  height: 1.5cm; 
-  font-size: 0.7cm; 
+  border-radius: 5px;
+  width:7%; 
+  height: 1.2cm; 
+  font-size: 0.5cm; 
   margin: 10px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 6px #999;
   border: none;
   background-color: #99CED4;
 }
@@ -109,25 +109,24 @@ margin-top: 25px;
 
 .buttonbig {
   transition-duration: 0.4s;
-  border-radius: 10px;
-  width:45%; 
-  height: 2.5cm; 
-  font-size: 1.5cm; 
+  border-radius: 5px;
+  width:40%; 
+  height: 2.2cm; 
+  font-size: 35px; 
   margin: 10px;
-  box-shadow: 0 9px #999;
   border: none;
-  background-color:#fea3aa;
+  background-color: #DCDCDC;
 }
 
 
 .buttonmenu {
   transition-duration: 0.4s;
-  border-radius: 10px;
-  width:11%; 
-  height: 1.5cm; 
-  font-size: 0.7cm; 
+  border-radius: 5px;
+  width:9%; 
+  height: 1.2cm; 
+  font-size: 0.6cm; 
   margin: 10px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 6px #999;
   border: none;
   background-color: #99CED4;
 }
@@ -147,12 +146,12 @@ margin-top: 25px;
 
 .buttonselected {
   transition-duration: 0.4s;
-  border-radius: 10px;
-  width:11%; 
-  height: 1.5cm; 
-  font-size: 0.7cm; 
+  border-radius: 5px;
+  width:9%; 
+  height: 1.2cm; 
+  font-size: 0.6cm; 
   margin: 10px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 6px #999;
   border: none;
   background-color: #BAED91;
 }
@@ -171,41 +170,84 @@ margin-top: 25px;
   text-align: justify;
   font-size: 12pt;
   margin-top: 6pt;
-  margin-left: 20mm;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 30px;
 }
 
 .filtercont {
 
   margin-left: -50mm;
-  width: 10cm;
 }
 
 .datatable {
-  margin-left: 10%;
-  margin-right: 10%;
-  width:100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width:120%;
 }
 
 .filterbutton {
   transition-duration: 0.4s;
-  border-radius: 10px;
-  width:3cm; 
-  height: 1.2cm; 
-  font-size: 0.5cm; 
+  border-radius: 5px;
+  width:100px; 
+  height: 30px;
+  color: black; 
+  font-size: 15px; 
   margin: 10px;
-  box-shadow: 0 9px #999;
-  border: none;
-  background-color: #99CED4;
+  box-shadow: 0 6px #999;
+  border: solid;
+  border-color:#999 ;
+  border-width: 1px;
+  background-color: #fea3aa ;
 }
 
 .filterbutton:hover {
-  background-color:#BAED91;
+  background-color:#fea3aa ;
   color: black;
-  transform: scale(1.1,1.1);
+  transform: scale(1.1,1.1)
 }
 
 .filterbutton:active {
   transform: translateY(4px);
-  background-color:#BAED91;
+  background-color:#777777;
   border: none;
+}
+
+.filter-heading {
+text-align: center;
+font-size: .5cm;
+}
+
+.filteritem {
+  list-style-type: none;
+  margin: 0;
+  margin-left: -30px;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 3;
+
+}
+
+.filterbox {
+  height: 170px;
+  width: 250px;
+  background-color: ##616161;
+  align-content: center;
+  margin-left: 30px;
+}
+
+.buttonbox {
+  height: 70px;
+  width: 250px;
+  align-content: center;
+  margin-left: 30px;
+
+}
+
+.headingfilterbox {
+  height: 30px;
+  width: 250px;
+  align-content: center;
+  margin-left: 30px;
+
 }
