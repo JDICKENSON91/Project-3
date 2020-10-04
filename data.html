@@ -26,15 +26,73 @@
 
   <container>
     <div class="btn-group; containerbutton"  style= "margin-left: 7.5%; margin-right: 7.5%; margin-top: .5cm; width: 85%; align-content: center;">
-      <button class="buttonmenu">Map</button>
-      <button class="buttonselected">Data</button>
-  <button class="buttonbig">World City Populations</button>
-    <button class="buttonmenu">Cities</button>
-    <button class="buttonmenu">Countries</button>
+      <button class="buttonmenu webfont">Map</button>
+      <button class="buttonselected webfont">Data</button>
+  <button class="buttonbig webfont">World City Populations</button>
+    <button class="buttonmenu webfont">Cities</button>
+    <button class="buttonmenu webfont">Countries</button>
   </div>
 </container>
   <!-- The div that holds Table HTML -->
-  
+        <p class= "dataheader webfont" style="margin-top: .5cm;">Global  City Population Data</p>
+        <p class= "datapara" >Use the interactive charts below to explore the dataset</p>
+        <div class="container">
+          <div class="row">
+            <div class="filtercont">
+              <aside class="">
+                <div class="">
+                  <div class="">Filter Search</div>
+                  <div class="">
+                    <form id="form"> 
+                      <div class="">
+                        <ul class="" id="filters">
+                          <li class="">
+                              <label for="date">Enter a Country</label>
+                              <input class="form-control" id="country" type="text" placeholder="Country">
+                            </li>
+                            <li class="">
+                              <label for="date">Enter a City</label>
+                              <input class="form-control" id="city" type="text" placeholder="City">
+                            </li>
+                          </li>
+                        </ul>
+                      </div>
+                      <button id="filter-btn" type="button" class="">Filter Table</button>
+                      <button id="reset-btn" type="button" class="">Reset Table</button>
+                    </form>
+                  </div>
+                </div>
+              </aside>
+            </div>
+            <div class="col-md-10">
+              <div id="table-area" class="datatable center">
+                <table id="ufo-table" class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="table-head">Country</th>
+                      <th class="table-head">City</th>
+                      <th class="table-head">Location</th>
+                      <th class="table-head">1950</th>
+                      <th class="table-head">1960</th>
+                      <th class="table-head">1970</th>
+                      <th class="table-head">1980</th>
+                      <th class="table-head">1990</th>
+                      <th class="table-head">2000</th>
+                      <th class="table-head">2010</th>
+                      <th class="table-head">2020</th>
+                      <th class="table-head">2030</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+
+
 
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
@@ -51,7 +109,8 @@
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- Our JavaScript -->
   <script type="text/javascript" src="static/js/logic.js"></script>
-
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
 
 
 </body>

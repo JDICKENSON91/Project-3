@@ -61,7 +61,7 @@ body,
 
 .button {
   transition-duration: 0.4s;
-  border-radius: 15px;
+  border-radius: 10px;
   width:9%; 
   height: 1.5cm; 
   font-size: 0.7cm; 
@@ -69,7 +69,6 @@ body,
   box-shadow: 0 9px #999;
   border: none;
   background-color: #99CED4;
-  font: Tahoma;
 }
 
 .button:hover {
@@ -100,7 +99,6 @@ margin-left:30%;
 width: 40%;
 text-align: center;
 font-size: 1.5cm;
-font: Tahoma;
 border-radius: 15px;
 border: none;
 background-color: #99CED4;
@@ -111,7 +109,7 @@ margin-top: 25px;
 
 .buttonbig {
   transition-duration: 0.4s;
-  border-radius: 15px;
+  border-radius: 10px;
   width:45%; 
   height: 2.5cm; 
   font-size: 1.5cm; 
@@ -119,13 +117,12 @@ margin-top: 25px;
   box-shadow: 0 9px #999;
   border: none;
   background-color:#fea3aa;
-  font: Tahoma;
 }
 
 
 .buttonmenu {
   transition-duration: 0.4s;
-  border-radius: 15px;
+  border-radius: 10px;
   width:11%; 
   height: 1.5cm; 
   font-size: 0.7cm; 
@@ -133,7 +130,6 @@ margin-top: 25px;
   box-shadow: 0 9px #999;
   border: none;
   background-color: #99CED4;
-  font: Tahoma;
 }
 
 .buttonmenu:hover {
@@ -151,7 +147,7 @@ margin-top: 25px;
 
 .buttonselected {
   transition-duration: 0.4s;
-  border-radius: 15px;
+  border-radius: 10px;
   width:11%; 
   height: 1.5cm; 
   font-size: 0.7cm; 
@@ -159,5 +155,57 @@ margin-top: 25px;
   box-shadow: 0 9px #999;
   border: none;
   background-color: #BAED91;
-  font: Tahoma;
+}
+
+.webfont {
+  font-family: cursive;
+}
+
+.dataheader {
+  text-align: center;
+  font-size: 1.2cm;
+
+}
+
+.datapara {
+  text-align: justify;
+  font-size: 12pt;
+  margin-top: 6pt;
+  margin-left: 20mm;
+}
+
+.filtercont {
+
+  margin-left: -50mm;
+  width: 10cm;
+}
+
+.datatable {
+  margin-left: 10%;
+  margin-right: 10%;
+  width:100%;
+}
+
+.filterbutton {
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  width:3cm; 
+  height: 1.2cm; 
+  font-size: 0.5cm; 
+  margin: 10px;
+  box-shadow: 0 9px #999;
+  border: none;
+  background-color: #99CED4;
+}
+
+.filterbutton:hover {
+  background-color:#BAED91;
+  color: black;
+  transform: scale(1.1,1.1);
+}
+
+.filterbutton:active {
+  transform: translateY(4px);
+  background-color:#BAED91;
+  border: none;
 }
