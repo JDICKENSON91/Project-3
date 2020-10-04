@@ -64,7 +64,7 @@ body,
   border-radius: 15px;
   width:9%; 
   height: 1.5cm; 
-  font-size: 0.9cm; 
+  font-size: 0.7cm; 
   margin: 10px;
   box-shadow: 0 9px #999;
   border: none;
@@ -118,21 +118,17 @@ margin-top: 25px;
   margin: 10px;
   box-shadow: 0 9px #999;
   border: none;
-  background-color: #99CED4;
+  background-color:#fea3aa;
   font: Tahoma;
 }
 
-.buttonbig:hover {
-  background-color:#EE86B7;
-  color: black;
-}
 
 .buttonmenu {
   transition-duration: 0.4s;
   border-radius: 15px;
   width:11%; 
   height: 1.5cm; 
-  font-size: 0.9cm; 
+  font-size: 0.7cm; 
   margin: 10px;
   box-shadow: 0 9px #999;
   border: none;
@@ -141,7 +137,7 @@ margin-top: 25px;
 }
 
 .buttonmenu:hover {
-  background-color:#EE86B7;
+  background-color:#BAED91;
   color: black;
   transform: scale(1.1,1.1);
 }
@@ -150,4 +146,18 @@ margin-top: 25px;
   transform: translateY(4px);
   background-color:#BAED91;
   border: none;
+}
+
+
+.buttonselected {
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  width:11%; 
+  height: 1.5cm; 
+  font-size: 0.7cm; 
+  margin: 10px;
+  box-shadow: 0 9px #999;
+  border: none;
+  background-color: #BAED91;
+  font: Tahoma;
 }
