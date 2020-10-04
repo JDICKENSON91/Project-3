@@ -1,4 +1,4 @@
-var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/Data/global-city-population-estimates-2000.geojson"
+var dataurl = "https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/Data/global-city-population-estimates-2030.geojson"
 
 // Function to determine marker size based on population.
 function markerSize(population) {
@@ -17,17 +17,17 @@ function markerSize(population) {
 // Function to return the color based on population.
 function markerColor(population) {
   if (population > 30000) {
-    return 'red'
+    return '#FEA3AA'
   } else if (population > 20000) {
-    return 'orange'
+    return '#F8B88B'
   } else if (population > 10000) {
-    return 'yellow'
+    return '#FAF884'
   } else if (population > 5000) {
-      return 'green'
+      return '#BAED91'
     } else if (population > 2000) {
-      return 'blue'    
+      return '#B2CEFE'    
   } else {
-    return 'purple'
+    return '#F2A2E8'
   }
 }
 
@@ -163,12 +163,12 @@ accessToken: API_KEY
       
 
     div.innerHTML += "<h4>Population</h4>";
-    div.innerHTML += '<i style="background: red"></i><span>Greater than 30 Million</span><br>';
-    div.innerHTML += '<i style="background: orange"></i><span>20 Million</span><br>';
-    div.innerHTML += '<i style="background: yellow"></i><span>10 Million</span><br>';
-    div.innerHTML += '<i style="background: green"></i><span>5 Million</span><br>';
-    div.innerHTML += '<i style="background: blue"></i><span>2 Million</span><br>';
-    div.innerHTML += '<i style="background: purple"></i><span>Less Than 2 Million</span><br>';
+    div.innerHTML += '<i style="background: #FEA3AA"></i><span>Greater than 30 Million</span><br>';
+    div.innerHTML += '<i style="background: #F8B88B"></i><span>20 Million</span><br>';
+    div.innerHTML += '<i style="background: #FAF884"></i><span>10 Million</span><br>';
+    div.innerHTML += '<i style="background: #BAED91"></i><span>5 Million</span><br>';
+    div.innerHTML += '<i style="background: #B2CEFE"></i><span>2 Million</span><br>';
+    div.innerHTML += '<i style="background: #F2A2E8"></i><span>Less Than 2 Million</span><br>';
 
 
     return div;
