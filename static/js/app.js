@@ -89,3 +89,5 @@ tableData.forEach((report) => {
 //Selecting ID filter button and create the clicking event.
 var resetbutton = d3.select("#reset-btn");
 resetbutton.on("click", runreset);
+
+

@@ -22,21 +22,20 @@
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 
-<body style ="background-color:#DCDCDC;">
-
-  <container>
-    <div class="btn-group; containerbutton"  style= "margin-left: 7.5%; margin-right: 7.5%; margin-top: .5cm; width: 85%; align-content: center;">
-      <button class="buttonmenu webfont">Map</button>
-      <button class="buttonselected webfont">Data</button>
-  <button class="buttonbig webfont">World City Populations</button>
-    <button class="buttonmenu webfont">Cities</button>
-    <button class="buttonmenu webfont">Countries</button>
+<body class = "pageback">
+  <div class="w3-bar w3-black">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Maps</a>
+    <a href="#" class="w3-bar-item w3-button">Data</a>
+    <a href="#" class="w3-bar-item w3-button">Charts</a>
   </div>
+  <container>
 </container>
   <!-- The div that holds Table HTML -->
         <p class= "dataheader webfont" style="margin-top: .5cm;">Global  City Population Data</p>
         <p class= "datapara" >"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <div class="container">
+        <p class = "Headingtable">Population (Thousands)</p>
           <div class="row">
             <div class="filtercont">
               <div class="panel-heading filter-heading headingfilterbox webfont">Filter Search</div>
@@ -67,8 +66,8 @@
             </div>
             </div>
             <div class="col-md-10">
-              <div id="table-area" class="datatable center">
-                <table id="ufo-table" class="w3-table-all w3-hoverable">
+              <div id="table-area" class="datatable">
+                <table class="w3-table-all w3-hoverable">
                   <thead>
                     <tr  style="background-color: #99CED4;">
                       <th class="table-head">Country</th>
@@ -110,9 +109,9 @@
   <!-- API key -->
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
   <script src="static/js/data.js"></script>
   <script src="static/js/app.js"></script>
+  <script src="static/js/logic.js"></script>
 
 
 </body>

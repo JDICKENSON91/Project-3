@@ -61,18 +61,16 @@ body,
 
 .button {
   transition-duration: 0.4s;
-  border-radius: 5px;
   width:7%; 
   height: 1.2cm; 
   font-size: 0.5cm; 
   margin: 10px;
-  box-shadow: 0 6px #999;
-  border: none;
-  background-color: #99CED4;
+  color: white;
+  background-color: black;
 }
 
 .button:hover {
-  background-color:#EE86B7;
+  background-color:#86c4ee;
   color: black;
   transform: scale(1.1,1.1);
 }
@@ -92,58 +90,6 @@ body,
   align-content:center;
 }
 
-.headertext {
-color: 	#333333;
-margin-right:30%;
-margin-left:30%;
-width: 40%;
-text-align: center;
-font-size: 1.5cm;
-border-radius: 15px;
-border: none;
-background-color: #99CED4;
-box-shadow: 0 9px #999;
-margin-bottom: 25px;
-margin-top: 25px;
-}
-
-.buttonbig {
-  transition-duration: 0.4s;
-  border-radius: 5px;
-  width:40%; 
-  height: 2.2cm; 
-  font-size: 35px; 
-  margin: 10px;
-  border: none;
-  background-color: #DCDCDC;
-}
-
-
-.buttonmenu {
-  transition-duration: 0.4s;
-  border-radius: 5px;
-  width:9%; 
-  height: 1.2cm; 
-  font-size: 0.6cm; 
-  margin: 10px;
-  box-shadow: 0 6px #999;
-  border: none;
-  background-color: #99CED4;
-}
-
-.buttonmenu:hover {
-  background-color:#BAED91;
-  color: black;
-  transform: scale(1.1,1.1);
-}
-
-.buttonmenu:active {
-  transform: translateY(4px);
-  background-color:#BAED91;
-  border: none;
-}
-
-
 .buttonselected {
   transition-duration: 0.4s;
   border-radius: 5px;
@@ -157,7 +103,7 @@ margin-top: 25px;
 }
 
 .webfont {
-  font-family: cursive;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dataheader {
@@ -169,10 +115,10 @@ margin-top: 25px;
 .datapara {
   text-align: justify;
   font-size: 12pt;
-  margin-top: 6pt;
+  margin-top: 15px;
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .filtercont {
@@ -188,13 +134,11 @@ margin-top: 25px;
 
 .filterbutton {
   transition-duration: 0.4s;
-  border-radius: 5px;
   width:100px; 
   height: 30px;
   color: black; 
   font-size: 15px; 
   margin: 10px;
-  box-shadow: 0 6px #999;
   border: solid;
   border-color:#999 ;
   border-width: 1px;
@@ -238,7 +182,7 @@ font-size: .5cm;
 
 .buttonbox {
   height: 70px;
-  width: 250px;
+  width: 100%;
   align-content: center;
   margin-left: 30px;
 
@@ -250,4 +194,167 @@ font-size: .5cm;
   align-content: center;
   margin-left: 30px;
 
+}
+
+
+.Mapdefaulttext {
+text-align: center;
+font-size: 5cm;
+}
+
+.pageback {
+  background-color: white;
+  corlor:
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+}
+
+.block {
+	position: relative;
+	margin: 300px auto 0;
+	width: 500px;
+	height: 250px;
+	background: linear-gradient(0deg, #000, #272727);
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+.a{color: #E7484F}
+.b{color: #F68B1D}
+.c{color: #FCED00}
+.d{color: #009E4F}
+.e{color: #00AAC3}
+.f{color:  #732982}
+
+
+.text-center {
+  text-align: center;
+}
+
+.rainbow{
+  background-color: #343A40;
+  border-radius: 4px;  
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  
+}
+
+.rainbow-1:hover{
+   background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+   animation:slidebg 5s linear infinite;
+}
+
+.rainbow-2:hover{
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+  animation:slidebg 2s linear infinite;
+}
+
+.rainbow-3:hover{
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, red);
+  animation:slidebg 2s linear infinite;
+}
+
+.rainbow-4:hover{
+   background-image:     linear-gradient(
+      to right, 
+      #E7484F,
+      #F68B1D, 
+      #FCED00,
+      #009E4F,
+      #00AAC3,
+      #732982
+    );
+  animation:slidebg 2s linear infinite;
+}
+
+
+.rainbow-5:hover{
+   background-image:     linear-gradient(
+      to right, 
+      #E7484F,
+      #E7484F 16.65%,
+      #F68B1D 16.65%,
+      #F68B1D 33.3%,
+      #FCED00 33.3%,
+      #FCED00 49.95%,
+      #009E4F 49.95%,
+      #009E4F 66.6%,
+      #00AAC3 66.6%,
+      #00AAC3 83.25%,
+      #732982 83.25%,
+      #732982 100%,
+      #E7484F 100%
+     
+     
+     
+    );
+  animation:slidebg 2s linear infinite;
+}
+
+
+
+
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+
+.follow{
+  margin-top: 40px;
+}
+
+.follow a{
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.container{
+  margin-top: 10px;
+}
+
+.Headingtable{
+  margin-left: 80%;
+  font-size: 20px;
 }
