@@ -1,142 +1,78 @@
-/Use the D3 library to read in samples.json.
-//Use a function to import data and create plots.
-function CreateCharts (id) {
-        //Import the data from the json file.
-        d3.json("data/samples.json").then((data)=> {
-            console.log(data)
+// from data.js
 
-            //Get the washing frequency.
-            //var washfreq = data.metadata.map(d => d.washfreq)
-            //console.log(`Washing Freq: ${washfreq}`)
 
-            //Create the filter to filter the data.
-            var samples = data.samples.filter(s => s.id.toString() === id)[0];
-            console.log(samples);
+var CityData = data;
 
-            //Slice to get the top ten and reverse.
-            var SampleValues = samples.sample_values.slice(0, 10).reverse();
-            var idValues = (samples.otu_ids.slice(0, 10)).reverse();
-            var idOtu = idValues.map(d => "OTU " + d)
-            console.log(`OTU IDS: ${idOtu}`)
-            var labels = samples.otu_labels.slice(0, 10);
-            console.log('-----------------------------------------')
-            console.log(`Sample Values: ${SampleValues}`)
-            console.log('-----------------------------------------')
-            console.log(`Id's: ${idValues}`)
+function createchart() {
 
-            //CReate the Bar Plot.
-            //Create trace for the plot.
-            var tracebar = {
-            x: SampleValues,
-            y: idOtu,
-            text: labels,
-            type:"bar",
-            orientation: "h",
-            };
 
-            //Create varaiiable for Data.
-            var databar = [tracebar];
+    
 
-            //Create layout.
-            var layoutbar = {
-                title: "Top 10 OTU",
-                yaxis:{
-                    tickmode:"linear",
-                },
-                margin: {
-                    l: 100,
-                    r: 100,
-                    t: 30,
-                    b: 20
+        //var City = "Perth"
+
+        var M = (function() {
+
+        let i = 0;
+            for (let i = 0; i <= CityData.length; i++) {
+                if (CityData[i].City_Area = d3.select("#city-chart-filter").property("value")) 
+                {break;}
+                else i++;
                 }
-            };
+                return i
+           
+            }
+            
+        );
 
-            //Create the bar chart.
-            Plotly.newPlot("bar", databar, layoutbar);
 
-        
-            //Create the trace for the bubble chart.
-            var tracebubble = {
-            x: samples.otu_ids,
-            y: samples.sample_values,
-            mode: "markers",
-            marker: {
-                size: samples.sample_values,
-                color: samples.otu_ids
-            },
-            text: samples.otu_labels
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+        labels: ['1950', '1960', '1970', '1980', '1990', '2000','2010','2020','2030'],
+        datasets: [{
+            label: 'Population (Thousands)',
+            data: [CityData[M].D_1950,CityData[M].D_1960, CityData[M].D_1970, CityData[M].D_1980, CityData[M].D_1990, CityData[M].D_2000, CityData[M].D_2010,CityData[M].D_2020,CityData[M].D_2030],
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+        },
+        options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+}
 
-            };
+)
 
-            //Create the layout for the bubble chart.
-            var layoutbubble = {
-            xaxis:{title: "OTU ID"},
-            height: 600,
-            width: 1300
-            };
-
-            //Create variable for Data.
-            var databubble = [tracebubble];
-
-            //Create teh bubble chart.
-            Plotly.newPlot("bubble", databubble, layoutbubble);
-
-        });    
 }
 
 
 
-//Use a function to import data and generate Info.
-function GetDemoInfo(id) {
-        //Import the data from the json file.
-    d3.json("data/samples.json").then((data)=> {
-        
-        //Get Demographic Info
-        var metadata = data.metadata;
-
-        console.log(metadata)
-
-        //Filter by ID
-        var result = metadata.filter(meta => meta.id.toString() === id)[0];
-
-        //Select the demographic info table
-        var DemoInfo = d3.select("#sample-metadata");
-        
-        //Reset the demographic info table
-        DemoInfo.html("");
-
-        //Push the data onto the table
-        Object.entries(result).forEach((key) => {   
-                DemoInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
-        });
-    });
-}
-
-//Create the change event
-function SelectionChanged(id) {
-    CreateCharts(id);
-    GetDemoInfo(id);
-}
-
-function init() {
-    //Select dropdown
-    var dropdown = d3.select("#selDataset");
-
-    //Read the data
-    d3.json("data/samples.json").then((data)=> {
-        console.log(data)
-
-        //Fill the dropdown menu with IDs
-        data.names.forEach(function(name) {
-            dropdown.append("option").text(name).property("value");
-        });
-
-
-        
-        //Call the fuction to make the change and update the info on page
-        CreateCharts(data.names[0]);
-        GetDemoInfo(data.names[0]);
-    });
-}
-
-init();
+//Selecting ID filter button and create the clicking event.
+var citybutton = d3.select("#filter-btn-chart");
+citybutton.on("click", createchart);

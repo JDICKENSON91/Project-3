@@ -357,3 +357,9 @@ body{
   margin-left: 80%;
   font-size: 20px;
 }
+
+.menubutton:hover{
+background-color:#00AAC3;
+}
+
+

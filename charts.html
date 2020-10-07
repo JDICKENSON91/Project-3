@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="WebVisualizations/resources/style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 
+
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -24,13 +25,23 @@
 
 <body class = "pageback">
   <div class="w3-bar w3-black">
-    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button menubutton">Home</a>
     <a href="#" class="w3-bar-item w3-button">Maps</a>
     <a href="#" class="w3-bar-item w3-button">Data</a>
     <a href="#" class="w3-bar-item w3-button">Charts</a>
   </div>
   <container>
 </container>
+<ul class="" id="filters">
+  <li class="filteritem">
+      <label for="date" style="margin-top: 10px;">Enter a City</label>
+      <input class="form-control" id="city" type="text" placeholder="City">
+    </li>
+</ul>
+<div class="buttonbox">
+  <button id="filter-btn-chart" type="button" class="filterbutton webfont">Select City</button>
+</div>
+<canvas id="myChart"></canvas>
 
 
 
@@ -50,6 +61,7 @@
   <script src="static/js/logic.js"></script>
   <script src="static/js/data.js"></script>
   <script src="static/js/app.js"></script>
+  <script src="static/js/Chart.Bundle.js"></script>
   <script src="static/js/chartapp.js"></script>
 
 
