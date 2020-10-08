@@ -193,6 +193,10 @@ function createmap1960() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -308,8 +312,8 @@ function createmap1960() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+  center: [lat, lng],
+  zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -369,6 +373,10 @@ function createmap1970() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -484,8 +492,8 @@ function createmap1970() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -545,6 +553,10 @@ function createmap1980() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -660,8 +672,8 @@ function createmap1980() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -724,6 +736,10 @@ function createmap1990() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -839,8 +855,8 @@ function createmap1990() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -902,6 +918,10 @@ function createmap2000() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -1017,8 +1037,8 @@ function createmap2000() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -1079,6 +1099,10 @@ function createmap2010() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -1194,8 +1218,8 @@ function createmap2010() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -1254,6 +1278,10 @@ function createmap2020() {
   dataurl="https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/Data/global-city-population-estimates-2020.geojson"
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
+  
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
 
   // Function to determine marker size based on population.
   function markerSize(population) {
@@ -1370,8 +1398,8 @@ function createmap2020() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
@@ -1431,6 +1459,10 @@ function createmap2030() {
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
   // Function to determine marker size based on population.
   function markerSize(population) {
     if (population > 30000) {
@@ -1546,8 +1578,8 @@ function createmap2030() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+    center: [lat, lng],
+    zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   layers: [darkmap, population]
