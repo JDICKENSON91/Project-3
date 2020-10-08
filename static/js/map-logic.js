@@ -124,9 +124,13 @@ function createmap1950() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   dragging: true,
   layers: [darkmap, population]
   });
+
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -169,25 +173,13 @@ function createmap1950() {
     
     legend.addTo(myMap);
   
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
     
   
   };
+  
+
+
+
   
 }
 
@@ -357,26 +349,7 @@ function createmap1960() {
   
       return div;
     };
-    
-    legend.addTo(myMap);
   
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
-    
   
   };
   
@@ -549,25 +522,6 @@ function createmap1970() {
       return div;
     };
     
-    legend.addTo(myMap);
-  
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
-    
   
   };
   
@@ -739,25 +693,7 @@ function createmap1980() {
   
       return div;
     };
-    
-    legend.addTo(myMap);
   
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
     
   
   };
@@ -932,24 +868,6 @@ function createmap1990() {
       return div;
     };
     
-    legend.addTo(myMap);
-  
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
     
   
   };
@@ -1124,24 +1042,6 @@ function createmap2000() {
       return div;
     };
     
-    legend.addTo(myMap);
-  
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
     
   
   };
@@ -1315,25 +1215,6 @@ function createmap2010() {
       return div;
     };
     
-    legend.addTo(myMap);
-  
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
-    
   
   };
   
@@ -1505,26 +1386,7 @@ function createmap2020() {
   
       return div;
     };
-    
-    legend.addTo(myMap);
-  
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
-    
+
   
   };
   
@@ -1697,24 +1559,7 @@ function createmap2030() {
       return div;
     };
     
-    legend.addTo(myMap);
-  
-      // creating the legend
-      var poptotal = L.control({position: 'bottomleft'});
-  
-      // add legend to map
-      poptotal.onAdd = function () {
-      
-        var div = L.DomUtil.create('div', 'info legend')
-          
-    
-        div.innerHTML += "<h4>Global Population Total: ${feature.properties.Population / 1000} M</h4>";
-    
-    
-        return div;
-      };
-      
-      poptotal.addTo(myMap);
+
     
   
   };
@@ -1748,5 +1593,6 @@ button2020.on("click", createmap2020);
     
 var button2030 = d3.select("#D2030-btn");
 button2030.on("click", createmap2030);
+
 
 
