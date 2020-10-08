@@ -7,20 +7,23 @@ function createmap1950() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
 
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -196,19 +199,23 @@ function createmap1960() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -376,19 +383,23 @@ function createmap1970() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -556,19 +567,23 @@ function createmap1980() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -739,19 +754,23 @@ function createmap1990() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -921,19 +940,23 @@ function createmap2000() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -1102,19 +1125,23 @@ function createmap2010() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -1282,19 +1309,23 @@ function createmap2020() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
@@ -1462,19 +1493,23 @@ function createmap2030() {
   var lat = d3.select("#lat-sel").property("value");
   var lng = d3.select("#lng-sel").property("value");
   var zoom = d3.select("#zoom-sel").property("value");
+  var size = zoom * 1;
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
-    if (population > 30000) {
-      return 20
-    } else if (population > 20000) {
-      return 15
+    if (population > 25000) {
+      return 5 * size
     } else if (population > 10000) {
-      return 10
+      return 4.5 * size
     } else if (population > 5000) {
-      return 5  
+      return 3 * size
+    } else if (population > 2000) {
+      return 2.5 * size
+    } else if (population > 500) {
+      return 2 * size  
     } else {
-      return 3
+      return 1.5 * size
     }
   }
   // Function to return the color based on population.
