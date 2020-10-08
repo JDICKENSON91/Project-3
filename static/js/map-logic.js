@@ -1,10 +1,13 @@
-
-
 function createmap1950() {
 
   dataurl="https://raw.githubusercontent.com/JDICKENSON91/Project-3/logic/Data/global-city-population-estimates-1950.geojson"
 
   var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
+
+  var lat = d3.select("#lat-sel").property("value");
+  var lng = d3.select("#lng-sel").property("value");
+  var zoom = d3.select("#zoom-sel").property("value");
+
 
   // Function to determine marker size based on population.
   function markerSize(population) {
@@ -121,8 +124,8 @@ function createmap1950() {
   
     // Creating map object
   var myMap = L.map("map", {
-  center: [0, 0],
-  zoom: 3,
+  center: [lat, lng],
+  zoom: zoom,
   scrollWheelZoom: false,
   zoomControl: false,
   dragging: true,
@@ -308,8 +311,12 @@ function createmap1960() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
+
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -480,9 +487,13 @@ function createmap1970() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
   
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
+
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -652,9 +663,14 @@ function createmap1980() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
   
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
+
+
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -826,8 +842,12 @@ function createmap1990() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
+
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -1000,8 +1020,12 @@ function createmap2000() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
+
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -1173,9 +1197,13 @@ function createmap2010() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
   
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
+
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -1345,8 +1373,12 @@ function createmap2020() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
+
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -1517,8 +1549,12 @@ function createmap2030() {
   center: [0, 0],
   zoom: 3,
   scrollWheelZoom: false,
+  zoomControl: false,
   layers: [darkmap, population]
   });
+
+  L.control.pan().addTo(myMap);
+  L.control.zoom().addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {

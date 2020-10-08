@@ -30,11 +30,27 @@
     <a href="#" class="w3-bar-item w3-button">Data</a>
     <a href="#" class="w3-bar-item w3-button">Charts</a>
   </div>
-  <container>
-</container>
+
+  <div class="container">
+    <div class ="row">
+    <div class="col-md-4">
+    <label for="date" style="margin-top: 10px;">Enter Lat</label>
+    <input class="form-control" id="lat-sel" type="text" placeholder="Between -90 & 90 ">
+  </div>
+  <div class="col-md-4">
+    <label for="date" style="margin-top: 10px;">Enter Lng</label>
+    <input class="form-control" id="lng-sel" type="text" placeholder="Between -180 & 180 ">
+  </div>
+  <div class="col-md-4">
+    <label for="date" style="margin-top: 10px;">Enter Zoom Level</label>
+    <input class="form-control" id="zoom-sel" type="text" placeholder="Between 1 - 18">
+  </div>
+</div>
+</div>
+
   <!-- The div that holds our map -->
   
-  <div id="map" class="Mapdefaulttext" style="width: 95%; height: 80%; margin-left: 2.5%; margin-right: 2.5%; margin-top: .5cm; border: none;">Select a Decade</div>
+  <div id="map" class="Mapdefaulttext" style="width: 95%; height: 80%; margin-left: 2.5%; margin-right: 2.5%; margin-top: .5cm; border: none;"></div>
   <div class="btn-group; containerbutton" style="margin-left: 7.5%; margin-right: 7.5%; margin-top: .5cm; width: 85%; align-content: center;">
     <button id="D1950-btn" type="button" class="button webfont w3-wide">1950</button>
     <button id="D1960-btn" type="button" class="button webfont w3-wide">1960</button>
