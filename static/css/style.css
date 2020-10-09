@@ -378,7 +378,7 @@ background-color:#00AAC3;
 
 .newcolumn {
   float: left;
-  width: 40%%;
+  width: 40%;
   padding: 5px;
 }
 
@@ -387,4 +387,8 @@ background-color:#00AAC3;
   content: "";
   clear: both;
   display: table;
+}
+
+body {
+  overflow:auto;
 }
