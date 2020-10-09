@@ -1,3 +1,4 @@
+
 // from data.js
 var tableData = data;
 
@@ -20,14 +21,6 @@ tableData.forEach((report) => {
 });
 
 
-//Create The filtering event
-
-//Selecting ID filter button and create the clicking event.
-var filterbutton = d3.select("#filter-btn");
-filterbutton.on("click", runfilters);
-//or pressing enter
-var form = d3.select("#form");
-form.on("submit", runfilters);
 
 //Create the function
 function runfilters() {
@@ -52,7 +45,7 @@ function runfilters() {
         FilteredData = FilteredData.filter(record => record.Country_or_area === FilterCountry);
         }
         if (FilterCity) {
-        FilteredData = FilteredData.filter(record => record.City_Area === FilterState);
+        FilteredData = FilteredData.filter(record => record.City_Area === FilterCity);
         }
 
     //Re-Enter the table based on Filters
@@ -67,6 +60,7 @@ function runfilters() {
         });
     });
 }
+
 
 function runreset() {
 
@@ -83,11 +77,14 @@ tableData.forEach((report) => {
         cell.text(value);
     });
 });
-
 }
+
 
 //Selecting ID filter button and create the clicking event.
 var resetbutton = d3.select("#reset-btn");
 resetbutton.on("click", runreset);
 
-
+//Selecting ID filter button and create the clicking event.
+var filterbutton = d3.select("#filter-btn");
+filterbutton.on("click", runfilters);
+//or pressing enter

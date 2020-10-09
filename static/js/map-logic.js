@@ -29,19 +29,20 @@ function createmap1950() {
   // Function to return the color based on population.
   function markerColor(population) {
     if (population > 25000) {
-      return '#FEA3AA'
+      return '#1342EF'
     } else if (population > 10000) {
-      return '#F8B88B'
+      return '#1374EF'
     } else if (population > 5000) {
-      return '#FAF884'
+      return '#1398EF'
     } else if (population > 2000) {
-        return '#BAED91'
+        return '#13CEEF'
       } else if (population > 500) {
-        return '#B2CEFE'    
+        return '#13D1EF'    
     } else {
-      return '#F2A2E8'
+      return '#13ecef'
     }
   }
+  
   
   
   
@@ -137,6 +138,15 @@ function createmap1950() {
 
   L.control.pan().addTo(myMap);
   L.control.zoom().addTo(myMap);
+
+  var miniMap = new L.Control.GlobeMiniMap({
+    position: 'bottomleft',
+    //uncomment to assign colors
+    land:'#11614d',
+    water:'#0e96e1',
+    marker:'#000000',
+    topojsonSrc : 'static/js/world.json'
+  }).addTo(myMap);
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -165,14 +175,28 @@ function createmap1950() {
       var div = L.DomUtil.create('div', 'info legend')
         
   
-      div.innerHTML += "<h4>Population</h4>";
-      div.innerHTML += '<i style="background: #FEA3AA"></i><span>Greater than 25 Million</span><br>';
-      div.innerHTML += '<i style="background: #F8B88B"></i><span>Greater than 10 Million</span><br>';
-      div.innerHTML += '<i style="background: #FAF884"></i><span>Greater than 5 Million</span><br>';
-      div.innerHTML += '<i style="background: #BAED91"></i><span>Greater than 2 Million</span><br>';
-      div.innerHTML += '<i style="background: #B2CEFE"></i><span>Greater than 0.5 Million</span><br>';
-      div.innerHTML += '<i style="background: #F2A2E8"></i><span>Less Than 0.5 Million</span><br>';
-  
+      div.innerHTML += '<h4 style="color: black">Population Legend</h4>';
+      div.innerHTML += '<i style="background: #1342EF"></i><span>Greater than 25 Million</span><br>';
+      div.innerHTML += '<i style="background: #1374ef"></i><span>Greater than 10 Million</span><br>';
+      div.innerHTML += '<i style="background: #1398ef"></i><span>Greater than 5 Million</span><br>';
+      div.innerHTML += '<i style="background: #13ceef"></i><span>Greater than 2 Million</span><br>';
+      div.innerHTML += '<i style="background: #13d1ef"></i><span>Greater than 0.5 Million</span><br>';
+      div.innerHTML += '<i style="background: #13ecef"></i><span>Less Than 0.5 Million</span><br>';
+      function markerColor(population) {
+        if (population > 25000) {
+          return '#1342EF'
+        } else if (population > 10000) {
+          return '#1374EF'
+        } else if (population > 5000) {
+          return '#1398EF'
+        } else if (population > 2000) {
+            return '#13CEEF'
+          } else if (population > 500) {
+            return '#13D1EF'    
+        } else {
+          return '#13ecef'
+        }
+      }
   
       return div;
     };
@@ -221,17 +245,17 @@ function createmap1960() {
   // Function to return the color based on population.
   function markerColor(population) {
     if (population > 25000) {
-      return '#FEA3AA'
+      return '#1342EF'
     } else if (population > 10000) {
-      return '#F8B88B'
+      return '#1374EF'
     } else if (population > 5000) {
-      return '#FAF884'
+      return '#398EF'
     } else if (population > 2000) {
-        return '#BAED91'
+        return '#13B6EF'
       } else if (population > 500) {
-        return '#B2CEFE'    
+        return '#13D1EF'    
     } else {
-      return '#F2A2E8'
+      return '#13ecef'
     }
   }
   

@@ -70,7 +70,7 @@ body,
 }
 
 .button:hover {
-  background-color:#86c4ee;
+  background-color:#3dd660;
   color: black;
   transform: scale(1.1,1.1);
 }
@@ -109,6 +109,7 @@ body,
 .dataheader {
   text-align: center;
   font-size: 1.2cm;
+  color: white;
 
 }
 
@@ -118,7 +119,10 @@ body,
   margin-top: 15px;
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  padding: 7px;
+  color: white;
+  background-color: black;
 }
 
 .filtercont {
@@ -136,17 +140,17 @@ body,
   transition-duration: 0.4s;
   width:100px; 
   height: 30px;
-  color: black; 
+  color: white; 
   font-size: 15px; 
   margin: 10px;
   border: solid;
   border-color:#999 ;
   border-width: 1px;
-  background-color: #fea3aa ;
+  background-color: black ;
 }
 
 .filterbutton:hover {
-  background-color:#fea3aa ;
+  background-color:#BAED91 ;
   color: black;
   transform: scale(1.1,1.1)
 }
@@ -160,6 +164,7 @@ body,
 .filter-heading {
 text-align: center;
 font-size: .5cm;
+color: white;
 }
 
 .filteritem {
@@ -175,7 +180,7 @@ font-size: .5cm;
 .filterbox {
   height: 170px;
   width: 250px;
-  background-color: #616161;
+  background-color: black;
   align-content: center;
   margin-left: 30px;
 }
@@ -358,8 +363,12 @@ body{
 }
 
 .Headingtable{
-  margin-left: 80%;
+  margin-left: 75%;
   font-size: 20px;
+  color: white;
+  background-color: black;
+  padding: 7px;
+  text-align: center;
 }
 
 .menubutton:hover{
@@ -367,3 +376,15 @@ background-color:#00AAC3;
 }
 
 
+.newcolumn {
+  float: left;
+  width: 40%%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.newrow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
