@@ -1708,6 +1708,9 @@ function createmaps() {
  
   
           //var City = "Perth"
+
+          //document.getElementById('myChart').innerHTML = ""; 
+          //document.getElementById('myChart').innerHTML = "<span style='width:100%;height:100%;'></span>"
   
           var ctx = document.getElementById('myChart').getContext('2d');
           var myChart = new Chart(ctx, {
@@ -1851,7 +1854,7 @@ function createmaps() {
   // Define a function we want to run once for each feature in the features array
   function addPopup(feature, layer) {
     // Give each feature a pop up describing the place and time of the earthquake
-    return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.Population / 1000} M</h4>`);
+    return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.Population / 1000} M in ${decade}</h4>`);
   }
   
   // function to receive a layer of markers and plot them on a map.
@@ -2084,7 +2087,7 @@ createMap2(population2);
 // Define a function we want to run once for each feature in the features array
 function addPopup2(feature, layer) {
   // Give each feature a pop up describing the place and time of the earthquake
-  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.Population / 1000} M</h4>`);
+  return layer.bindPopup(`<h3> ${feature.properties.Urban_Agglomeration} </h3> <hr> <h4>Country: ${feature.properties.Country_or_area} </h4> <h4>Population: ${feature.properties.Population / 1000} M in ${decade2}</h4>`);
 }
 
 // function to receive a layer of markers and plot them on a map.
