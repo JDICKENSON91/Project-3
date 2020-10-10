@@ -1861,12 +1861,6 @@ function createmaps() {
   function createMap(population) {
   
     // Define streetmap and darkmap layers
-    var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-      attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-      maxZoom: 18,
-      id: "mapbox/streets-v11",
-      accessToken: API_KEY
-    });
   
     var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
       attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -1882,19 +1876,11 @@ function createmaps() {
       accessToken: API_KEY
     });
   
-    var satelite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-      attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-      maxZoom: 18,
-      id: "mapbox/satellite-v9",
-      accessToken: API_KEY
-    });
   
     // Define a baseMaps object to hold our base layers
     var baseMaps = {
-      "Satelite": satelite,
       "Dark Map": darkmap,
-      "Light Map" : lightmap,
-      "Street Map": streetmap
+      "Light Map" : lightmap
     };
   
   
@@ -2094,12 +2080,6 @@ function addPopup2(feature, layer) {
 function createMap2(population2) {
 
   // Define streetmap and darkmap layers
-  var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    maxZoom: 18,
-    id: "mapbox/streets-v11",
-    accessToken: API_KEY
-  });
 
   var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -2115,19 +2095,11 @@ function createMap2(population2) {
     accessToken: API_KEY
   });
 
-  var satelite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    maxZoom: 18,
-    id: "mapbox/satellite-v9",
-    accessToken: API_KEY
-  });
 
   // Define a baseMaps object to hold our base layers
   var baseMaps = {
-    "Satelite": satelite,
     "Dark Map": darkmap,
-    "Light Map" : lightmap,
-    "Street Map": streetmap
+    "Light Map" : lightmap
   };
 
 
