@@ -1706,11 +1706,7 @@ function createmaps() {
 
 
  
-  
-          //var City = "Perth"
-
-          //document.getElementById('myChart').innerHTML = ""; 
-          //document.getElementById('myChart').innerHTML = "<span style='width:100%;height:100%;'></span>"
+// Create Chart using Chart.js
   
           var ctx = document.getElementById('myChart').getContext('2d');
           var myChart = new Chart(ctx, {
@@ -1944,44 +1940,6 @@ function createmaps() {
       }).addTo(myMap1);
   
   
-    // creating the legend
-    var legend = L.control({position: 'bottomright'});
-  
-    // add legend to map
-    legend.onAdd = function () {
-    
-      var div = L.DomUtil.create('div', 'info legend')
-        
-  
-      div.innerHTML += '<h4 style="color: black">Population Legend</h4>';
-      div.innerHTML += '<i style="background: #1342EF"></i><span>Greater than 25 Million</span><br>';
-      div.innerHTML += '<i style="background: #1374ef"></i><span>Greater than 10 Million</span><br>';
-      div.innerHTML += '<i style="background: #1398ef"></i><span>Greater than 5 Million</span><br>';
-      div.innerHTML += '<i style="background: #13ceef"></i><span>Greater than 2 Million</span><br>';
-      div.innerHTML += '<i style="background: #13d1ef"></i><span>Greater than 0.5 Million</span><br>';
-      div.innerHTML += '<i style="background: #13ecef"></i><span>Less Than 0.5 Million</span><br>';
-      function markerColor(population) {
-        if (population > 25000) {
-          return '#1342EF'
-        } else if (population > 10000) {
-          return '#1374EF'
-        } else if (population > 5000) {
-          return '#1398EF'
-        } else if (population > 2000) {
-            return '#13CEEF'
-          } else if (population > 500) {
-            return '#13D1EF'    
-        } else {
-          return '#13ecef'
-        }
-      }
-  
-      return div;
-    };
-    
-    legend.addTo(myMap1);
-  
-    
   
   };
   
@@ -2150,14 +2108,7 @@ layers: [darkmap, population2]
 L.control.pan().addTo(myMap2);
 L.control.zoom().addTo(myMap2);
 
-var miniMap = new L.Control.GlobeMiniMap({
-  position: 'bottomleft',
-  //uncomment to assign colors
-  land:'#11614d',
-  water:'#0e96e1',
-  marker:'#000000',
-  topojsonSrc : 'static/js/world.json'
-}).addTo(myMap2);
+
 
 // Adding tile layer
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
