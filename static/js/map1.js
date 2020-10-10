@@ -1721,7 +1721,7 @@ function createmaps() {
           labels: ['1950', '1960', '1970', '1980', '1990', '2000','2010','2020','2030'],
           datasets: [{
               label: 'Population (Thousands)',
-              data: [CityData[x].D_1950,CityData[x].D_1960, CityData[0].D_1970, CityData[x].D_1980, CityData[x].D_1990, CityData[x].D_2000, CityData[x].D_2010,CityData[x].D_2020,CityData[x].D_2030],
+              data: [CityData[x].D_1950,CityData[x].D_1960, CityData[x].D_1970, CityData[x].D_1980, CityData[x].D_1990, CityData[x].D_2000, CityData[x].D_2010,CityData[x].D_2020,CityData[x].D_2030],
               backgroundColor: [
                   'rgba(0, 255, 255)',
                   'rgba(0, 255, 255)',
